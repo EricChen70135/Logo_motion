@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 684.05 259.52">
+  <!-- Generator: Adobe Illustrator 30.5.1, SVG Export Plug-In . SVG Version: 2.1.4 Build 3)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: url(#_未命名漸層_3);
+      }
+
+      .st0, .st1, .st2, .st3 {
+        isolation: isolate;
+      }
+
+      .st0, .st1, .st3 {
+        mix-blend-mode: multiply;
+        opacity: .5;
+      }
+
+      .st4 {
+        fill: url(#_未命名漸層);
+      }
+
+      .st1 {
+        fill: url(#_未命名漸層_2);
+      }
+
+      .st3 {
+        fill: url(#_未命名漸層_4);
+      }
+    </style>
+    <linearGradient id="_未命名漸層" data-name="未命名漸層" x1="13.55" y1="522.05" x2="674.97" y2="346.58" gradientTransform="translate(0 -304)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fec13e"/>
+      <stop offset=".59" stop-color="#f26e1b"/>
+      <stop offset="1" stop-color="#cc1700"/>
+    </linearGradient>
+    <linearGradient id="_未命名漸層_2" data-name="未命名漸層 2" x1="179.5" y1="472.73" x2="202.72" y2="356.59" gradientTransform="translate(0 -304)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e03b3b" stop-opacity="0"/>
+      <stop offset="1" stop-color="#872b41"/>
+    </linearGradient>
+    <linearGradient id="_未命名漸層_3" data-name="未命名漸層 3" x1="252.52" y1="472.39" x2="275.57" y2="357.06" gradientTransform="translate(0 -304)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e03b3b" stop-opacity="0"/>
+      <stop offset="1" stop-color="#872b41"/>
+    </linearGradient>
+    <linearGradient id="_未命名漸層_4" data-name="未命名漸層 4" x1="474.64" y1="468.98" x2="496.97" y2="357.29" gradientTransform="translate(0 -304)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e03b3b" stop-opacity="0"/>
+      <stop offset="1" stop-color="#872b41"/>
+    </linearGradient>
+  </defs>
+  <g class="st2">
+    <g id="_圖層_1" data-name="圖層_1">
+      <path class="st4" d="M106.2,49.67L88.75,0h170.54l-17.45,49.67H106.2h0ZM476.96,65.18l-68.28,194.3h51.29l68.28-194.3h-51.29ZM348.34.01h-69.66l-17.45,49.67h81.74c43.34,0,53.4,45.36,40.08,84.91-21.16,62.83-61.31,75.16-117.84,75.16h-8.94l50.8-144.56h-51.29l-68.28,194.3h97.96c94.58,0,128.47-60.85,146.57-114.15C451.44,88.19,434.06.02,348.34.02h0ZM236.4,65.18h-51.29s-3.27,9.35-24.87,70.77c-11.57,32.9-24.65,51.14-38.36,61.47-13.61,10.26-30.02,12.05-52.06,12.05H17.57L0,259.48h77.63c31.1,0,53.25-5.48,71.83-17.76,21.91-14.49,38.73-39.11,51.33-75.19l35.61-101.35h0ZM621.62,98.73c9.9-11.28,16.98-26.48,16.98-41.4C638.6,28.86,616.57.01,579.11.01h-142.47l17.45,49.67h123.02c5.11,0,11.91,3.93,11.91,12.17,0,4.22-2.82,10.21-9.61,17.56-8.32,9.01-60.49,63.88-60.49,63.88h83.16c14.83,0,33.9,5.12,33.9,29.53,0,19.76-17.19,36.66-48.86,36.66h-93.29l-17.58,50.04h112.37c55.64,0,95.43-37.09,95.43-87.04,0-36.73-21.84-70.63-62.44-73.75h0Z"/>
+      <path class="st1" d="M200.34,167.76l35.85-102,.2-.58h-51.29s-3.27,9.35-24.87,70.77c-5.71,16.23-11.78,28.88-18.12,38.79h55.64c.88-2.28,1.74-4.6,2.58-6.97h0Z"/>
+      <polygon class="st0" points="255.78 65.18 307.07 65.18 268.57 174.73 217.33 174.73 255.78 65.18"/>
+      <polygon class="st3" points="476.96 65.18 528.25 65.18 491.07 170.98 439.78 170.98 476.96 65.18"/>
+    </g>
+  </g>
+</svg>

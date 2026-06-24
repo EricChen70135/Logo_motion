@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JDB Logo Motion</title>
+  <style>
+    :root {
+      --bg: #150b08;
+      --bg-deep: #070403;
+      --gold: #fec13e;
+      --orange: #f26e1b;
+      --red: #cc1700;
+      --wine: #872b41;
+      --cream: #fff2d8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: var(--bg-deep);
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    [data-composition-id="jdb-logo-motion"] {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 50% 45%, rgba(242, 110, 27, 0.22), transparent 34%),
+        radial-gradient(circle at 18% 20%, rgba(254, 193, 62, 0.13), transparent 28%),
+        linear-gradient(160deg, var(--bg), var(--bg-deep) 62%);
+      color: var(--cream);
+    }
+
+    .motion-stage {
+      position: relative;
+      width: min(78vw, 1120px);
+      aspect-ratio: 1182.44 / 775.88;
+      display: grid;
+      place-items: center;
+      isolation: isolate;
+      opacity: 0;
+      transform: scale(0.985);
+      transform-origin: center;
+    }
+
+    .halo,
+    .floor-glow,
+    .corner-rule {
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .halo {
+      width: 78%;
+      height: 52%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(254, 193, 62, 0.28), rgba(204, 23, 0, 0.08) 46%, transparent 70%);
+      filter: blur(34px);
+      opacity: 0;
+      z-index: 0;
+    }
+
+    .floor-glow {
+      width: 64%;
+      height: 16%;
+      bottom: 16%;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(242, 110, 27, 0.22), transparent 72%);
+      filter: blur(22px);
+      opacity: 0;
+      z-index: 0;
+    }
+
+    .corner-rule {
+      width: 18%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(255, 242, 216, 0.55), transparent);
+      opacity: 0;
+      z-index: 2;
+    }
+
+    .corner-rule.top {
+      top: 17%;
+      right: 7%;
+    }
+
+    .corner-rule.bottom {
+      left: 9%;
+      bottom: 18%;
+    }
+
+    .logo-svg {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      filter: drop-shadow(0 28px 34px rgba(0, 0, 0, 0.38));
+      transform: translateZ(0);
+      will-change: transform, opacity;
+    }
+
+    .logo-core {
+      opacity: 0;
+      transform: translateY(46px) scale(0.985);
+      transform-box: fill-box;
+      transform-origin: center;
+      will-change: transform, opacity;
+    }
+
+    .logo-fill,
+    .logo-shade {
+      opacity: 1;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    .logo-shade {
+      opacity: 0.5;
+    }
+
+    .logo-sweep {
+      opacity: 0;
+      mix-blend-mode: screen;
+    }
+
+    .micro-label {
+      position: absolute;
+      left: 50%;
+      bottom: 10%;
+      transform: translateX(-50%);
+      z-index: 4;
+      color: rgba(255, 242, 216, 0.72);
+      font-size: clamp(11px, 1.2vw, 15px);
+      line-height: 1;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity 0.62s ease-out, transform 0.62s ease-out;
+      white-space: nowrap;
+    }
+
+    .micro-label.is-visible {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-6px);
+    }
+
+    .grain {
+      position: absolute;
+      inset: 0;
+      z-index: 5;
+      pointer-events: none;
+      opacity: 0.18;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 48px 48px, 48px 48px;
+      mask-image: radial-gradient(circle at center, black, transparent 76%);
+    }
+
+    @media (max-width: 720px) {
+      .motion-stage {
+        width: 96vw;
+      }
+
+      .micro-label {
+        bottom: 15%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main data-composition-id="jdb-logo-motion" data-width="1920" data-height="1080">
+    <div class="grain" data-layout-ignore></div>
+    <section class="motion-stage" aria-label="JDB animated logo">
+      <div class="halo" data-layout-ignore></div>
+      <div class="floor-glow" data-layout-ignore></div>
+      <div class="corner-rule top" data-layout-ignore></div>
+      <div class="corner-rule bottom" data-layout-ignore></div>
+
+      <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1182.44 775.88" role="img" aria-labelledby="logo-title">
+        <title id="logo-title">JDB logo</title>
+        <defs>
+          <linearGradient id="jdb-main-gradient" x1="262.52" y1="475.29" x2="923.94" y2="299.82" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#fec13e"/>
+            <stop offset=".59" stop-color="#f26e1b"/>
+            <stop offset="1" stop-color="#cc1700"/>
+          </linearGradient>
+          <linearGradient id="jdb-shade-gradient-1" x1="428.47" y1="425.97" x2="451.69" y2="309.83" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#e03b3b" stop-opacity="0"/>
+            <stop offset="1" stop-color="#872b41"/>
+          </linearGradient>
+          <linearGradient id="jdb-shade-gradient-2" x1="501.49" y1="425.63" x2="524.54" y2="310.30" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#e03b3b" stop-opacity="0"/>
+            <stop offset="1" stop-color="#872b41"/>
+          </linearGradient>
+          <linearGradient id="jdb-shade-gradient-3" x1="723.61" y1="429.02" x2="745.94" y2="317.33" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#e03b3b" stop-opacity="0"/>
+            <stop offset="1" stop-color="#872b41"/>
+          </linearGradient>
+          <linearGradient id="jdb-sweep-gradient" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+            <stop offset=".45" stop-color="#fff2d8" stop-opacity="0"/>
+            <stop offset=".5" stop-color="#fff2d8" stop-opacity=".95"/>
+            <stop offset=".56" stop-color="#fec13e" stop-opacity=".6"/>
+            <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+          </linearGradient>
+          <filter id="jdb-soften" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur class="logo-blur" in="SourceGraphic" stdDeviation="10"/>
+          </filter>
+          <mask id="jdb-reveal-mask">
+            <rect width="1182.44" height="775.88" fill="black"/>
+            <rect class="reveal-mask-rect" x="0" y="775.88" width="1182.44" height="0" fill="white"/>
+          </mask>
+          <mask id="jdb-logo-mask">
+            <rect width="1182.44" height="775.88" fill="black"/>
+            <path fill="white" d="M355.17,306.91l-17.45-49.67h170.54l-17.45,49.67h-135.64,0ZM725.93,322.42l-68.28,194.3h51.29l68.28-194.3h-51.29,0ZM597.31,257.25h-69.66l-17.45,49.67h81.74c43.34,0,53.4,45.36,40.08,84.91-21.16,62.83-61.31,75.16-117.84,75.16h-8.94l50.8-144.56h-51.29l-68.28,194.3h97.96c94.58,0,128.47-60.85,146.57-114.15,19.41-57.15,2.03-145.32-83.69-145.32h0ZM485.37,322.42h-51.29s-3.27,9.35-24.87,70.77c-11.57,32.9-24.65,51.14-38.36,61.47-13.61,10.26-30.02,12.05-52.06,12.05h-52.25l-17.57,50.01h77.63c31.1,0,53.25-5.48,71.83-17.76,21.91-14.49,38.73-39.11,51.33-75.19l35.61-101.35h0ZM870.59,355.97c9.9-11.28,16.98-26.48,16.98-41.4,0-28.47-22.03-57.32-59.49-57.32h-142.47l17.45,49.67h123.02c5.11,0,11.91,3.93,11.91,12.17,0,4.22-2.82,10.21-9.61,17.56-8.32,9.01-60.49,63.88-60.49,63.88h83.16c14.83,0,33.9,5.12,33.9,29.53,0,19.76-17.19,36.66-48.86,36.66h-93.29l-17.58,50.04h112.37c55.64,0,95.43-37.09,95.43-87.04,0-36.73-21.84-70.63-62.44-73.75h0Z"/>
+            <path fill="white" d="M449.31,425l35.85-102,.2-.58h-51.29s-3.27,9.35-24.87,70.77c-5.71,16.23-11.78,28.88-18.12,38.79h55.64c.88-2.28,1.74-4.6,2.58-6.97h0Z"/>
+            <polygon fill="white" points="504.75 322.42 556.04 322.42 517.54 431.97 466.3 431.97 504.75 322.42"/>
+            <polygon fill="white" points="725.93 322.42 777.22 322.42 740.04 428.22 688.75 428.22 725.93 322.42"/>
+          </mask>
+        </defs>
+
+        <g class="logo-core" mask="url(#jdb-reveal-mask)" filter="url(#jdb-soften)" style="isolation:isolate">
+          <path class="logo-fill" fill="url(#jdb-main-gradient)" d="M355.17,306.91l-17.45-49.67h170.54l-17.45,49.67h-135.64,0ZM725.93,322.42l-68.28,194.3h51.29l68.28-194.3h-51.29,0ZM597.31,257.25h-69.66l-17.45,49.67h81.74c43.34,0,53.4,45.36,40.08,84.91-21.16,62.83-61.31,75.16-117.84,75.16h-8.94l50.8-144.56h-51.29l-68.28,194.3h97.96c94.58,0,128.47-60.85,146.57-114.15,19.41-57.15,2.03-145.32-83.69-145.32h0ZM485.37,322.42h-51.29s-3.27,9.35-24.87,70.77c-11.57,32.9-24.65,51.14-38.36,61.47-13.61,10.26-30.02,12.05-52.06,12.05h-52.25l-17.57,50.01h77.63c31.1,0,53.25-5.48,71.83-17.76,21.91-14.49,38.73-39.11,51.33-75.19l35.61-101.35h0ZM870.59,355.97c9.9-11.28,16.98-26.48,16.98-41.4,0-28.47-22.03-57.32-59.49-57.32h-142.47l17.45,49.67h123.02c5.11,0,11.91,3.93,11.91,12.17,0,4.22-2.82,10.21-9.61,17.56-8.32,9.01-60.49,63.88-60.49,63.88h83.16c14.83,0,33.9,5.12,33.9,29.53,0,19.76-17.19,36.66-48.86,36.66h-93.29l-17.58,50.04h112.37c55.64,0,95.43-37.09,95.43-87.04,0-36.73-21.84-70.63-62.44-73.75h0Z"/>
+          <path class="logo-shade" fill="url(#jdb-shade-gradient-1)" opacity=".5" style="mix-blend-mode:multiply" d="M449.31,425l35.85-102,.2-.58h-51.29s-3.27,9.35-24.87,70.77c-5.71,16.23-11.78,28.88-18.12,38.79h55.64c.88-2.28,1.74-4.6,2.58-6.97h0Z"/>
+          <polygon class="logo-shade" fill="url(#jdb-shade-gradient-2)" opacity=".5" style="mix-blend-mode:multiply" points="504.75 322.42 556.04 322.42 517.54 431.97 466.3 431.97 504.75 322.42"/>
+          <polygon class="logo-shade" fill="url(#jdb-shade-gradient-3)" opacity=".5" style="mix-blend-mode:multiply" points="725.93 322.42 777.22 322.42 740.04 428.22 688.75 428.22 725.93 322.42"/>
+        </g>
+
+        <g class="logo-sweep" mask="url(#jdb-logo-mask)">
+          <rect class="sweep-bar" x="-360" y="170" width="220" height="430" fill="url(#jdb-sweep-gradient)" transform="skewX(-18)"/>
+        </g>
+      </svg>
+
+      <div class="micro-label">JUST DO THE BEST</div>
+    </section>
+  </main>
+
+  <script>
+    const stage = document.querySelector(".motion-stage");
+    const halo = document.querySelector(".halo");
+    const floorGlow = document.querySelector(".floor-glow");
+    const topRule = document.querySelector(".corner-rule.top");
+    const bottomRule = document.querySelector(".corner-rule.bottom");
+    const logoSvg = document.querySelector(".logo-svg");
+    const logoCore = document.querySelector(".logo-core");
+    const logoBlur = document.querySelector(".logo-blur");
+    const revealMask = document.querySelector(".reveal-mask-rect");
+    const logoSweep = document.querySelector(".logo-sweep");
+    const sweepBar = document.querySelector(".sweep-bar");
+    const label = document.querySelector(".micro-label");
+
+    const logoHeight = 775.88;
+    const duration = 4800;
+
+    const clamp01 = (value) => Math.min(1, Math.max(0, value));
+    const between = (time, start, end) => clamp01((time - start) / (end - start));
+    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+    const easeOutQuint = (t) => 1 - Math.pow(1 - t, 5);
+    const easeInOutCubic = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+    function setLogoReveal(progress) {
+      const eased = easeOutQuint(progress);
+      const visibleHeight = logoHeight * eased;
+      revealMask.setAttribute("y", String(logoHeight - visibleHeight));
+      revealMask.setAttribute("height", String(visibleHeight));
+      logoBlur.setAttribute("stdDeviation", (10 * (1 - eased)).toFixed(2));
+      logoCore.style.opacity = String(eased);
+      logoCore.style.transform = `translateY(${46 * (1 - eased)}px) scale(${0.985 + 0.015 * eased})`;
+    }
+
+    function draw(now, startTime) {
+      const elapsed = Math.min(duration, now - startTime);
+
+      const stageIn = easeOutCubic(between(elapsed, 100, 550));
+      stage.style.opacity = String(stageIn);
+      stage.style.transform = `scale(${0.985 + 0.015 * stageIn})`;
+
+      const haloIn = easeOutCubic(between(elapsed, 180, 980));
+      halo.style.opacity = String(haloIn * 0.76);
+      halo.style.transform = `scale(${1 + 0.12 * haloIn})`;
+
+      const floorIn = easeOutCubic(between(elapsed, 280, 980));
+      floorGlow.style.opacity = String(floorIn);
+      floorGlow.style.transform = `scaleX(${1 + 0.14 * floorIn})`;
+
+      const topIn = easeOutCubic(between(elapsed, 360, 800));
+      const bottomIn = easeOutCubic(between(elapsed, 420, 860));
+      topRule.style.opacity = String(topIn);
+      topRule.style.transform = `translateX(${-44 * topIn}px)`;
+      bottomRule.style.opacity = String(bottomIn);
+      bottomRule.style.transform = `translateX(${42 * bottomIn}px)`;
+
+      const pulse = easeOutCubic(between(elapsed, 1620, 1780));
+      const settle = easeOutCubic(between(elapsed, 1780, 2200));
+      const pulseScale = 1 + 0.018 * pulse * (1 - settle);
+      setLogoReveal(between(elapsed, 650, 1540));
+
+      const sweep = easeInOutCubic(between(elapsed, 1500, 2320));
+      const sweepFadeIn = between(elapsed, 1500, 1580);
+      const sweepFadeOut = 1 - between(elapsed, 2180, 2360);
+      logoSweep.style.opacity = String(Math.min(sweepFadeIn, sweepFadeOut));
+      sweepBar.setAttribute("transform", `translate(${1370 * sweep} 0) skewX(-18)`);
+
+      logoSvg.style.transform = `scale(${pulseScale})`;
+      logoSvg.style.filter = `drop-shadow(0 ${28 + 6 * between(elapsed, 4050, 4600)}px ${34 + 4 * between(elapsed, 4050, 4600)}px rgba(0, 0, 0, 0.44))`;
+
+      const ruleHold = 1 - 0.68 * between(elapsed, 3120, 3820);
+      topRule.style.opacity = String(topIn * ruleHold);
+      bottomRule.style.opacity = String(bottomIn * ruleHold);
+
+      if (elapsed >= 2780 && elapsed < 4050) {
+        label.classList.add("is-visible");
+      } else if (elapsed >= 4050) {
+        label.classList.remove("is-visible");
+      }
+
+      if (elapsed < duration) {
+        requestAnimationFrame((next) => draw(next, startTime));
+      }
+    }
+
+    requestAnimationFrame((now) => draw(now, now));
+  </script>
+</body>
+</html>
